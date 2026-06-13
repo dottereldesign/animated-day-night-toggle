@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Free-to-use animated dark mode and light mode theme toggle for CodePen, with a rolling sun-to-moon transition, live color picker controls, and customizable sky, sun, moon, star, and cloud colors."
+    />
+    <meta name="theme-color" content="#f0f0e8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1c2135" media="(prefers-color-scheme: dark)" />
+    <meta
+      name="keywords"
+      content="dark mode toggle, light mode switch, theme switcher, day night toggle, CSS animation, animated toggle button, color picker UI, sun moon toggle, dark light mode toggle, theme toggle CSS, animated switch CSS, CodePen toggle, free CSS toggle, UI toggle animation, custom color toggle, day mode night mode"
+    />
+    <meta name="author" content="Dotterel Design" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Animated Day Night Theme Toggle" />
+    <meta
+      property="og:description"
+      content="A free CodePen CSS theme switcher where the sun rolls into a crescent moon, clouds become stars, and the colors can be customized live."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dotterel Design" />
+    <meta property="og:url" content="https://codepen.io/jamiewilsonict/pen/LYKGjdb" />
+    <link rel="canonical" href="https://codepen.io/jamiewilsonict/pen/LYKGjdb" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Animated Day Night Theme Toggle" />
+    <meta
+      name="twitter:description"
+      content="A free customizable dark mode and light mode toggle for CodePen with a rolling sun-to-moon animation and live color controls."
+    />
+    <title>Animated Day Night Theme Toggle</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "Animated Day Night Toggle",
+        "description": "A free animated dark mode and light mode toggle with a rolling sun-to-moon transition, clouds-to-stars animation, and live color controls.",
+        "codeRepository": "https://github.com/dottereldesign/animated-day-night-toggle",
+        "programmingLanguage": ["HTML", "CSS", "JavaScript"],
+        "author": {
+          "@type": "Person",
+          "name": "Jamie Wilson",
+          "url": "https://github.com/dottereldesign"
+        },
+        "license": "https://creativecommons.org/publicdomain/zero/1.0/"
+      }
+    </script>
+  </head>
+  <body>
+    <main class="demo" aria-label="Theme switcher demo">
+      <header class="intro">
+        <h1>Animated Day Night Toggle</h1>
+        <p>
+          A customizable dark mode and light mode theme switcher where the sun rolls into a
+          crescent moon, clouds become stars, and every key color can be tuned live. Built for
+          CodePen and free to use.
+        </p>
+      </header>
+
+      <h2>Toggles</h2>
+      <section class="switcher-stack" aria-label="Theme switcher size variations">
+        <button
+          class="theme-switcher-grid theme-switcher-grid--small"
+          type="button"
+          aria-label="Switch small theme toggle"
+          aria-pressed="false"
+        >
+          <svg class="orb" aria-hidden="true" viewBox="0 0 20 20">
+            <defs>
+              <mask id="crescent-mask-small">
+                <rect width="20" height="20" fill="white"></rect>
+                <circle class="orb-cutout" cx="6.5" cy="10" r="9" fill="black"></circle>
+              </mask>
+            </defs>
+            <circle class="orb-disc" cx="10" cy="10" r="10" mask="url(#crescent-mask-small)"></circle>
+          </svg>
+          <span class="cloud-ball cloud-ball-left" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-middle" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-right" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-top" aria-hidden="true"></span>
+          <span class="star star-1" aria-hidden="true"></span>
+          <span class="star star-2" aria-hidden="true"></span>
+          <span class="star star-3" aria-hidden="true"></span>
+          <span class="star star-4" aria-hidden="true"></span>
+        </button>
+
+        <button
+          class="theme-switcher-grid theme-switcher-grid--compact"
+          type="button"
+          aria-label="Switch compact theme toggle"
+          aria-pressed="false"
+        >
+          <svg class="orb" aria-hidden="true" viewBox="0 0 20 20">
+            <defs>
+              <mask id="crescent-mask-medium">
+                <rect width="20" height="20" fill="white"></rect>
+                <circle class="orb-cutout" cx="6.5" cy="10" r="9" fill="black"></circle>
+              </mask>
+            </defs>
+            <circle class="orb-disc" cx="10" cy="10" r="10" mask="url(#crescent-mask-medium)"></circle>
+          </svg>
+          <span class="cloud-ball cloud-ball-left" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-middle" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-right" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-top" aria-hidden="true"></span>
+          <span class="star star-1" aria-hidden="true"></span>
+          <span class="star star-2" aria-hidden="true"></span>
+          <span class="star star-3" aria-hidden="true"></span>
+          <span class="star star-4" aria-hidden="true"></span>
+        </button>
+
+        <button
+          class="theme-switcher-grid theme-switcher-grid--medium"
+          type="button"
+          aria-label="Switch medium theme toggle"
+          aria-pressed="false"
+        >
+          <svg class="orb" aria-hidden="true" viewBox="0 0 20 20">
+            <defs>
+              <mask id="crescent-mask-large">
+                <rect width="20" height="20" fill="white"></rect>
+                <circle class="orb-cutout" cx="6.5" cy="10" r="9" fill="black"></circle>
+              </mask>
+            </defs>
+            <circle class="orb-disc" cx="10" cy="10" r="10" mask="url(#crescent-mask-large)"></circle>
+          </svg>
+          <span class="cloud-ball cloud-ball-left" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-middle" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-right" aria-hidden="true"></span>
+          <span class="cloud-ball cloud-ball-top" aria-hidden="true"></span>
+          <span class="star star-1" aria-hidden="true"></span>
+          <span class="star star-2" aria-hidden="true"></span>
+          <span class="star star-3" aria-hidden="true"></span>
+          <span class="star star-4" aria-hidden="true"></span>
+        </button>
+      </section>
+
+      <h2 class="color-heading">Color</h2>
+      <form class="controls" aria-label="Color settings">
+        <fieldset>
+          <legend>Sky</legend>
+          <label>
+            <span>Day</span>
+            <input type="color" value="#0dbdf6" data-color-var="--day-bg-color" />
+          </label>
+          <label>
+            <span>Night</span>
+            <input type="color" value="#272a30" data-color-var="--night-bg-color" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Light</legend>
+          <label>
+            <span>Sun</span>
+            <input type="color" value="#fabc1c" data-color-var="--sun-color" />
+          </label>
+          <label>
+            <span>Moon</span>
+            <input type="color" value="#fffdf2" data-color-var="--moon-color" />
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detail</legend>
+          <label>
+            <span>Stars</span>
+            <input type="color" value="#fffdf2" data-color-var="--star-color" />
+          </label>
+          <label>
+            <span>Clouds</span>
+            <input type="color" value="#fffdf2" data-color-var="--cloud-color" />
+          </label>
+        </fieldset>
+      </form>
+
+      <p class="license-note">Free to use, remix, and adapt.</p>
+    </main>
+
+    <button class="copy-llm-button" type="button" data-copy-llm aria-live="polite">Context for AI</button>
+
+    <a
+      class="github-link"
+      href="https://github.com/dottereldesign"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open GitHub profile"
+    >
+      <svg aria-hidden="true" viewBox="0 0 24 24">
+        <path
+          d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.72c-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.36 1.11 2.93.85.09-.67.35-1.11.64-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.35 9.35 0 0 1 12 7c.85 0 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9v2.79c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.59 17.52 2 12 2Z"
+        ></path>
+      </svg>
+      <span>Jamie Wilson</span>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

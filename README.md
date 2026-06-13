@@ -1,57 +1,53 @@
 # Animated Day Night Toggle
 
-A free-to-use animated dark mode and light mode toggle. The original build is vanilla HTML, CSS, and JavaScript for CodePen: the sun rolls into a thick crescent moon, clouds become stars, and the colors can be customized live.
+A free-to-use animated dark mode and light mode toggle built with vanilla HTML, CSS, and JavaScript. The sun rolls into a thick crescent moon, clouds become stars, and every key color can be customized live.
 
 CodePen:
 
 https://codepen.io/jamiewilsonict/pen/LYKGjdb
 
-## What It Is
+## Features
 
-- Vanilla HTML/CSS/JS source on CodePen
-- Animated day/night, dark/light mode theme switcher
+- Vanilla HTML, CSS, and JavaScript
 - Rolling sun-to-moon transition using an SVG mask
-- Clouds-to-stars transition
-- Small, compact, and medium toggle sizes
-- Live color controls for sky, sun, moon, stars, and clouds
+- Clouds-to-stars animation
+- Three sizes: small, compact, and medium
+- Live color controls for day sky, night sky, sun, moon, stars, and clouds
 - Accessible toggle buttons with `aria-label` and `aria-pressed`
-- 4px-based spacing for the surrounding UI
+- `prefers-reduced-motion` support
+- SEO metadata, canonical URL, Open Graph, Twitter metadata, and JSON-LD
 - `Context for AI` button that copies implementation guidance
+- Free to use, remix, and adapt
 
-## About This Repository
+## Files
 
-This repository currently contains a React port of the vanilla CodePen component because the repo was already a Create React App project. The source CodePen version remains plain HTML, CSS, and JavaScript.
-
-React app location:
-
-```bash
-theme-switcher/
+```txt
+index.html
+style.css
+script.js
 ```
 
-## Run The React Port
+## Use
 
-```bash
-cd theme-switcher
-npm install
-npm start
+Open `index.html` in a browser, or copy the markup, CSS, and JavaScript into your own site.
+
+The main editable color variables are:
+
+```css
+--day-bg-color
+--night-bg-color
+--sun-color
+--moon-color
+--star-color
+--cloud-color
 ```
 
-## Use The Vanilla Version
+## Accessibility
 
-For a non-React website, copy the HTML, CSS, and JavaScript from the CodePen project:
-
-- `index.html`
-- `style.css`
-- `script.js`
-
-The component uses CSS variables for the editable colors:
-
-- `--day-bg-color`
-- `--night-bg-color`
-- `--sun-color`
-- `--moon-color`
-- `--star-color`
-- `--cloud-color`
+- Toggle buttons use real `button` elements.
+- Toggle state is exposed with `aria-pressed`.
+- Each size has a unique accessible label.
+- Motion is reduced for users with `prefers-reduced-motion: reduce`.
 
 ## License
 
