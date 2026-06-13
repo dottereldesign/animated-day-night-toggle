@@ -1,65 +1,37 @@
-# Theme Switcher
+# Animated Day Night Toggle
 
-An interactive theme switcher button for React that toggles between day and night themes.
+A free-to-use animated dark mode and light mode theme toggle for React. The sun rolls into a thick crescent moon, clouds become stars, and the key colors can be tuned live.
 
-## Table of Contents
+Built from the CodePen version:
 
-- [Installation](#installation)
-- [Run Locally](#run-locally)
-- [Adding the ThemeSwitcherButton Component](#adding-the-themeswitcherbutton-component)
-- [License](#license)
-- [Contributing](#contributing)
-- [Author](#author)
+https://codepen.io/jamiewilsonict/pen/LYKGjdb
 
-## Installation
+## Features
 
-Clone the repository and navigate to the project directory:
-
-```bash
-git clone https://github.com/yourusername/theme-switcher.git
-cd theme-switcher
-npm install
-```
+- Rolling sun-to-moon animation
+- Clouds-to-stars transition
+- Small, compact, and medium toggle sizes
+- Live color controls for day sky, night sky, sun, moon, stars, and clouds
+- Accessible buttons with `aria-label` and `aria-pressed`
+- 4px-based spacing for the surrounding UI
+- Copyable AI context prompt
 
 ## Run Locally
 
-```
+```bash
+cd theme-switcher
+npm install
 npm start
 ```
 
-## Adding the ThemeSwitcherButton Component
+## Use
 
-To use the ThemeSwitcherButton component in your project, follow these steps:
-
-1. Copy the ThemeSwitcherButton.js and ThemeSwitcherButton.css files from the components directory to your project.
-2. Import and use the component in your application:
-
-```
-import React from 'react';
-import ThemeSwitcherButton from './components/ThemeSwitcherButton';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <main>
-        <ThemeSwitcherButton />
-      </main>
-    </div>
-  );
-}
-
-export default App;
-```
+Copy `ThemeSwitcherButton.jsx` and `ThemeSwitcherButton.css` from `theme-switcher/src/components`, then bring over the color variables from `App.css`.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request.
+Free to use, remix, and adapt.
 
 ## Author
 
-Jamie Wilson
+Jamie Wilson / Dotterel Design

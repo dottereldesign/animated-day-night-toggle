@@ -1,13 +1,264 @@
+:root {
+  --bg-color-light: #f0f0e8;
+  --bg-color-dark: #1c2135;
+  --border-color-light: #1c2135;
+  --border-color-dark: #f0f0e8;
+  --sun-color: #fabc1c;
+  --moon-color: #fffdf2;
+  --day-bg-color: #0dbdf6;
+  --night-bg-color: #272a30;
+  --cloud-color: #fffdf2;
+  --star-color: #fffdf2;
+}
+
 body {
   background-color: var(--bg-color-light);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   transition: background-color 0.8s ease;
 }
 
 .App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+}
+
+.demo {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 32px;
+  color: var(--border-color-light);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  text-align: center;
+}
+
+.intro {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+  margin-bottom: 8px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 0.8rem;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.color-heading {
+  margin-top: 16px;
+}
+
+.intro p {
+  color: currentColor;
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  line-height: 1.55;
+  opacity: 0.78;
+}
+
+.license-note {
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1;
+  opacity: 0.72;
+}
+
+.switcher-stack {
+  display: grid;
+  justify-items: center;
+  gap: 24px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(76px, 1fr));
+  gap: 24px;
+  width: min(100vw - 48px, 380px);
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+.controls fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 12px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+}
+
+.controls fieldset + fieldset::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: -12px;
+  width: 1px;
+  background: currentColor;
+  opacity: 0.22;
+}
+
+.controls legend {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0 0 8px;
+  padding: 0;
+  color: currentColor;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.controls label {
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+}
+
+.controls span {
+  line-height: 1;
+}
+
+.controls input {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.controls input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.controls input::-webkit-color-swatch {
+  border: 0;
+  border-radius: 50%;
+}
+
+.controls input::-moz-color-swatch {
+  border: 0;
+  border-radius: 50%;
+}
+
+body.has-night .demo,
+body.has-night .controls {
+  color: var(--border-color-dark);
+}
+
+.copy-llm-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  min-height: 32px;
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--bg-color-light);
+  background: var(--border-color-light);
+  cursor: pointer;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  transition:
+    background-color 0.8s ease,
+    color 0.8s ease,
+    transform 160ms ease;
+}
+
+.copy-llm-button:hover {
+  transform: translateY(-2px);
+}
+
+.copy-llm-button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+body.has-night .copy-llm-button {
+  color: var(--bg-color-dark);
+  background: var(--border-color-dark);
+}
+
+.github-link {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--border-color-light);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  transform: translateX(-50%);
+  transition:
+    color 0.8s ease,
+    transform 160ms ease;
+}
+
+.github-link:hover {
+  transform: translateX(-50%) translateY(-2px);
+}
+
+.github-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+.github-link svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+body.has-night .github-link {
+  color: var(--border-color-dark);
+}
+
+@media (max-width: 460px) {
+  .controls {
+    grid-template-columns: 1fr;
+    width: min(100vw - 48px, 220px);
+  }
+
+  .controls fieldset + fieldset::before {
+    display: none;
+  }
 }

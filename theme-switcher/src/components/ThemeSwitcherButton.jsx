@@ -1,49 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ThemeSwitcherButton.css";
 
-const ThemeSwitcherButton = () => {
-  const [isNightTheme, setIsNightTheme] = useState(false);
-
-  const handleClick = () => {
-    setIsNightTheme(!isNightTheme);
-    document.body.style.backgroundColor = isNightTheme
-      ? "var(--bg-color-light)"
-      : "var(--bg-color-dark)";
-  };
+const ThemeSwitcherButton = ({ id, size, isNight, onToggle }) => {
+  const maskId = `crescent-mask-${id}`;
 
   return (
     <button
-      className={`theme-switcher-grid ${isNightTheme ? "night-theme" : ""}`}
-      id="theme-switcher-grid"
+      className={`theme-switcher-grid theme-switcher-grid--${size} ${isNight ? "night-theme" : ""}`}
+      type="button"
       aria-label="Switch theme"
-      onClick={handleClick}
+      aria-pressed={isNight}
+      onClick={onToggle}
     >
-      <div className="sun" id="sun" aria-hidden="true"></div>
-      <div className="moon-overlay" id="moon-overlay" aria-hidden="true"></div>
-      <div
-        className="cloud-ball cloud-ball-left"
-        id="ball1"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="cloud-ball cloud-ball-middle"
-        id="ball2"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="cloud-ball cloud-ball-right"
-        id="ball3"
-        aria-hidden="true"
-      ></div>
-      <div
-        className="cloud-ball cloud-ball-top"
-        id="ball4"
-        aria-hidden="true"
-      ></div>
-      <div className="star" id="star1" aria-hidden="true"></div>
-      <div className="star" id="star2" aria-hidden="true"></div>
-      <div className="star" id="star3" aria-hidden="true"></div>
-      <div className="star" id="star4" aria-hidden="true"></div>
+      <svg className="orb" aria-hidden="true" viewBox="0 0 20 20">
+        <defs>
+          <mask id={maskId}>
+            <rect width="20" height="20" fill="white" />
+            <circle className="orb-cutout" cx="6.5" cy="10" r="9" fill="black" />
+          </mask>
+        </defs>
+        <circle className="orb-disc" cx="10" cy="10" r="10" mask={`url(#${maskId})`} />
+      </svg>
+      <span className="cloud-ball cloud-ball-left" aria-hidden="true" />
+      <span className="cloud-ball cloud-ball-middle" aria-hidden="true" />
+      <span className="cloud-ball cloud-ball-right" aria-hidden="true" />
+      <span className="cloud-ball cloud-ball-top" aria-hidden="true" />
+      <span className="star star-1" aria-hidden="true" />
+      <span className="star star-2" aria-hidden="true" />
+      <span className="star star-3" aria-hidden="true" />
+      <span className="star star-4" aria-hidden="true" />
     </button>
   );
 };
